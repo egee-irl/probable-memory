@@ -1,6 +1,4 @@
 const {app, BrowserWindow} = require('electron')
-const {ipcMain} = require('electron')
-const {dialog} = require('electron')
 const path = require('path')
 const url = require('url')
 
@@ -56,10 +54,3 @@ app.on('activate', () => {
     createWindow()
   }
 })
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
-
-// document.getElementById("thing").addEventListener("click", function (e) {
-//   console.log("lol")
-// });
