@@ -3,7 +3,7 @@
 
 document.getElementById("myButton").addEventListener("click", () => {
     const execFile = require('child_process').execFile;
-    const child = execFile('dosbox', (error, stdout, stderr) => {
+    const child = execFile('dosbox',['/home/egee/Dos/Raptor/RAP.EXE'], (error, stdout, stderr) => {
     if (error) {
         throw error;
     }
