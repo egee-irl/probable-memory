@@ -1,5 +1,5 @@
 const fs = require('fs')
-const {dialog} = require('electron').remote
+const { dialog } = require('electron').remote
 const execFile = require('child_process').execFile
 
 document.getElementById('raptor').addEventListener('click', () => {
@@ -9,9 +9,7 @@ document.getElementById('raptor').addEventListener('click', () => {
     } else {
       console.log('Raptor executable found at: ' + process.env.HOME + '/Dos/Raptor/RAP.EXE')
       execFile('dosbox', [process.env.HOME + '/Dos/Raptor/RAP.EXE', '-exit'], (error, stdout) => {
-        if (error) {
-          throw error
-        }
+        if (error) { throw error }
         console.log(stdout)
       })
     }
@@ -25,9 +23,7 @@ document.getElementById('oregontrail').addEventListener('click', () => {
     } else {
       console.log('Raptor executable found at: ' + process.env.HOME + '/Dos/the-oregon-trail/OREGON.EXE')
       execFile('dosbox', [process.env.HOME + '/Dos/the-oregon-trail/OREGON.EXE', '-exit'], (error, stdout) => {
-        if (error) {
-          throw error
-        }
+        if (error) { throw error }
         console.log(stdout)
       })
     }
