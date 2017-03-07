@@ -9,8 +9,8 @@ let win
 function createWindow () {
   // Create the browser window.
   win = new BrowserWindow({
-    width: 817,
-    height: 730,
+    width: 640,
+    height: 320,
     icon: path.join(__dirname, 'assets/ms-dos-icon.png')
   })
 
