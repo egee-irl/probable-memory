@@ -1,5 +1,5 @@
 const {app, BrowserWindow} = require('electron')
-const dialog = require('electron')
+const {dialog} = require('electron')
 const path = require('path')
 const url = require('url')
 const fs = require('fs')
@@ -33,6 +33,14 @@ function createWindow () {
     // when you should delete the corresponding element.
     win = null
   })
+  fs.access('/usr/bin/dosbox', (err) => {
+    if (err) {
+      console.log(dialog.showErrorBox('DOSBox Not Found', 'DOSBox executable was not found at /usr/bin'))
+      app.quit()
+    } else {
+      console.log('DOSBox executable found at /usr/bin')
+    }
+  })
 }
 
 // This method will be called when Electron has finished
@@ -55,8 +63,4 @@ app.on('activate', () => {
   if (win === null) {
     createWindow()
   }
-})
-
-fs.access('/usr/bin/dosbox', (err) => {
-  console.log(err ? 'DOSBox does not exist at /usr/bin' : 'DOSBox exists at /usr/bin')
 })
