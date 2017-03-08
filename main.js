@@ -33,6 +33,7 @@ function createWindow () {
     // when you should delete the corresponding element.
     win = null
   })
+  // Expects DOSBox to be installed at /usr/bin. If not, fail
   fs.access('/usr/bin/dosbox', (err) => {
     if (err) {
       console.log(dialog.showErrorBox('DOSBox Not Found', 'DOSBox executable was not found at /usr/bin'))

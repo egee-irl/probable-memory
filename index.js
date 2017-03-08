@@ -2,6 +2,10 @@ const fs = require('fs')
 const { dialog } = require('electron').remote
 const execFile = require('child_process').execFile
 
+// Expect DOS games to be installed in the following directory convention:
+// /home/user-name/Dos/dos-game
+// TODO: Add intelligence around game & executable discovery
+
 document.getElementById('raptor').addEventListener('click', () => {
   fs.access(process.env.HOME + '/Dos/Raptor/RAP.EXE', (err) => {
     if (err) {
