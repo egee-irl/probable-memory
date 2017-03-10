@@ -33,7 +33,12 @@ function createWindow () {
     // when you should delete the corresponding element.
     win = null
   })
-  // Expects DOSBox to be installed at /usr/bin. If not, fail
+}
+
+
+
+function init () {
+  // Right now we fail if DOSBox is not installed
   fs.access('/usr/bin/dosbox', (err) => {
     if (err) {
       console.log(dialog.showErrorBox('DOSBox Not Found', 'DOSBox executable was not found at /usr/bin'))
@@ -42,12 +47,25 @@ function createWindow () {
       console.log('DOSBox executable found at /usr/bin')
     }
   })
+  fs.access(process.env.HOME + '/.dosgames', (err) => {
+    if (err) {
+      console.log('DOS Games directory does not exists.. Creating it.')
+      fs.mkdir(process.env.HOME + '/.dosgames', (err) => {
+        console.log(err.message)
+      })
+    } else {
+      console.log('DOS Games directory exists. Cool.')
+    }
+  })
 }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
+app.on('ready', () => {
+  createWindow()
+  init()
+})
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
