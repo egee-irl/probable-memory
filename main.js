@@ -1,85 +1,25 @@
-const { app, BrowserWindow } = require('electron')
-const { dialog } = require('electron')
-const path = require('path')
-const url = require('url')
-const fs = require('fs')
+const gi = require('node-gtk')
+Gtk = gi.require('Gtk', '3.0')
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
-let win
+gi.startLoop()
+Gtk.init()
 
-function createWindow () {
-  // Create the browser window.
-  win = new BrowserWindow({
-    width: 640,
-    height: 320,
-    icon: path.join(__dirname, 'assets/ms-dos-icon.png')
-  })
+var header = new Gtk.HeaderBar();
+header.setTitle("Test!");
+header.setSubtitle("Subtitle test")
+header.setShowCloseButton(true);
 
-  // and load the index.html of the app.
-  win.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
-    protocol: 'file:',
-    slashes: true
-  }))
+const win = new Gtk.Window();
+win.on('destroy', () => Gtk.mainQuit())
+win.on('delete-event', () => false)
 
-  // Open the DevTools.
-  win.webContents.openDevTools()
+win.setDefaultSize(350, 70);
+win.setTitlebar(header);
+win.borderWidth = 10;
 
-  // Emitted when the window is closed.
-  win.on('closed', () => {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
-    win = null
-  })
-}
+win.setDefaultSize(200, 80)
+// win.add(new Gtk.Button.withLabel("Hello Vala"));
+win.add(new Gtk.Label({ label: 'Hello Gtk+' }))
 
-
-
-function init () {
-  // Right now we fail if DOSBox is not installed
-  fs.access('/usr/bin/dosbox', (err) => {
-    if (err) {
-      console.log(dialog.showErrorBox('DOSBox Not Found', 'DOSBox executable was not found at /usr/bin'))
-      app.quit()
-    } else {
-      console.log('DOSBox executable found at /usr/bin')
-    }
-  })
-  fs.access(process.env.HOME + '/.dosgames', (err) => {
-    if (err) {
-      console.log('DOS Games directory does not exists.. Creating it.')
-      fs.mkdir(process.env.HOME + '/.dosgames', (err) => {
-        console.log(err.message)
-      })
-    } else {
-      console.log('DOS Games directory exists. Cool.')
-    }
-  })
-}
-
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
-app.on('ready', () => {
-  createWindow()
-  init()
-})
-
-// Quit when all windows are closed.
-app.on('window-all-closed', () => {
-  // On macOS it is common for applications and their menu bar
-  // to stay active until the user quits explicitly with Cmd + Q
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
-})
-
-app.on('activate', () => {
-  // On macOS it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
-  if (win === null) {
-    createWindow()
-  }
-})
+win.showAll();
+Gtk.main();
