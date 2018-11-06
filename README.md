@@ -1,15 +1,57 @@
 # probable-memory
-This is the _Top-Secret_ repository for Probable-Memory, a simple game launcher similar to [Gnome Games](https://wiki.gnome.org/Apps/Games).
 
-# Purpose
-There are alot of really great games that are freely available for people to play but they often require setup and configuration that people don't always have time or desire for.
+This README outlines the details of collaborating on this Ember application.
+A short introduction of this app could easily go here.
 
-In most Linux distribution there is a trove of free games obscured within software repositories that users never know exist because these games are burried without an easy way of discovering them.
+## Prerequisites
 
-Probable-Memory's goal is to make it easier to discover and install these free and obscure games.
+You will need the following things properly installed on your computer.
 
-# Design
+* [Git](https://git-scm.com/)
+* [Node.js](https://nodejs.org/) (with npm)
+* [Ember CLI](https://ember-cli.com/)
+* [Google Chrome](https://google.com/chrome/)
 
-Probable-Memory is an [Electron](https://electron.atom.io/) app so it utilizes common web technologies such as JavaScript for logic, HTML for the view, and CSS for styling. Probable-Memory is designed to be simple in scope and lightweight; it is merely a method of discovering and launching games.
+## Installation
 
-While it is an Electron app and by definition is cross-platform, currently the code is tied to the Linux filesystem and will not run on Windows or MacOS machines (BSD should be fine though).
+* `git clone <repository-url>` this repository
+* `cd probable-memory`
+* `npm install`
+
+## Running / Development
+
+* `ember serve`
+* Visit your app at [http://localhost:4200](http://localhost:4200).
+* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+
+### Code Generators
+
+Make use of the many generators for code, try `ember help generate` for more details
+
+### Running Tests
+
+* `ember test`
+* `ember test --server`
+
+### Linting
+
+* `npm run lint:hbs`
+* `npm run lint:js`
+* `npm run lint:js -- --fix`
+
+### Building
+
+* `ember build` (development)
+* `ember build --environment production` (production)
+
+### Deploying
+
+Specify what it takes to deploy your app.
+
+## Further Reading / Useful Links
+
+* [ember.js](https://emberjs.com/)
+* [ember-cli](https://ember-cli.com/)
+* Development Browser Extensions
+  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
+  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
