@@ -1,6 +1,5 @@
 import Component from "@ember/component";
-import { os } from "os";
-// const os = require("os");
+const os = requireNode("os");
 
 export default Component.extend({
   doubleClick() {
