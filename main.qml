@@ -10,11 +10,18 @@ ApplicationWindow {
     // The thing below was created via the designer in Qt Creator
     Item {
       Button {
-          id: button
+          id: button01
           x: 53
-          y: 34
-          text: qsTr("Hey All")
-          onClicked: test.quit()
+          y: 10
+          text: qsTr("Steam")
+          onClicked: test.launch0()
+      }
+      Button {
+        id: button02
+        x: 53
+        y: 60
+        text: qsTr("Minecraft")
+        onClicked: test.launch1()
       }
     Test {
       id: test
