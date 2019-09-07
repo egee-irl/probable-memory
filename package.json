@@ -1,0 +1,26 @@
+{
+  "name": "ProbableMemory",
+  "version": "0.1.0",
+  "description": "ProbableMemory application build with Electron",
+  "repository": "",
+  "dependencies": {},
+  "author": {
+    "name": "Egee",
+    "email": ""
+  },
+  "devDependencies": {
+    "bozon": "0.10.3",
+    "mocha": "^6.1.4",
+    "spectron": "^6.0.0"
+  },
+  "build": {
+    "appId": "com.electron.probablememory",
+    "win": {
+      "publish": null
+    },
+    "mac": {
+      "publish": null,
+      "category": "your.app.category.type"
+    }
+  }
+}
