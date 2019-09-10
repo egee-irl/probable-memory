@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - run:
+          name: Install npm deps
+          command: "yarn"
+      - run:
+          name: Run Tests
+          command: "yarn test"
+      - run:
+          name: Export Test Results
+          command: "mkdir test-results && mkdir test-results/jest && mv ./junit.xml test-results/jest/results.xml"
+      - store_test_results:
+          path: ./test-results
+      - run:
+          name: Build Project
+          command: "yarn build"

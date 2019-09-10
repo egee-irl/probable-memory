@@ -1,26 +1,26 @@
 {
-  "name": "ProbableMemory",
-  "version": "0.1.0",
-  "description": "ProbableMemory application build with Electron",
-  "repository": "",
-  "dependencies": {},
-  "author": {
-    "name": "Egee",
-    "email": ""
+  "name": "ts-skeleton",
+  "version": "1.0.0",
+  "description": "a typescript template for node projects",
+  "main": "index.js",
+  "repository": "git@github.com:egee-irl/ts-skeleton.git",
+  "author": "egee-irl <brian@egee.io>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "node_modules/.bin/tsc --build tsconfig.json",
+    "rebuild": "yarn clean && yarn run build",
+    "clean": "rm -rf dist/* && touch dist/.gitkeep",
+    "test": "node_modules/.bin/jest --runInBand --ci --reporters=default --reporters=jest-junit"
+  },
+  "dependencies": {
+    "@types/node": "^12.7.4",
+    "typescript": "^3.6.2"
   },
   "devDependencies": {
-    "bozon": "0.10.3",
-    "mocha": "^6.1.4",
-    "spectron": "^6.0.0"
-  },
-  "build": {
-    "appId": "com.electron.probablememory",
-    "win": {
-      "publish": null
-    },
-    "mac": {
-      "publish": null,
-      "category": "your.app.category.type"
-    }
+    "@types/jest": "^24.0.18",
+    "jest": "^24.9.0",
+    "jest-junit": "^8.0.0",
+    "ts-jest": "^24.0.2"
   }
 }

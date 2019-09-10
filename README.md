@@ -1,29 +1,25 @@
-# ProbableMemory
+# ts-skeleton
 
-> My ProbableMemory app built with Electron
+An opinionated ~~& spooky~~ skeleton project template for Node projects using TypeScript.
 
+This template makes use of the following:
 
-## Dev
+* TypeScript (es2018 preset)
+* Jest (jest-junit for reports)
+* Yarn
 
-```
-$ npm install
-```
+Visual Studio Code debugging is configured to build before attaching the debugger, so debugging works out of the box.
 
-### Run
+This project is configured to use **local** Jest & TypeScript binaries, so you don't need to install them globally.
 
-```
-$ bozon start
-```
+The following commands are supported via  `package.json`:
 
-### Package
+`yarn start`: Begins running the _compiled_ JS code in the `./dist` folder.
 
-```
-$ bozon package
-```
+`yarn build`: Builds all TS files from the `./lib` folder into the `./dist` folder.
 
-Builds the app for OS X, Linux, and Windows, using [electron-builder](https://github.com/electron-userland/electron-builder).
+`yarn rebuild`: Cleans the `./dist` folder, and rebuilds all TS files.
 
+`yarn clean`: Removes all files from the `./dist` folder.
 
-## License
-
-The MIT License (MIT) © Egee 2019
+`yarn test`: Runs TS-enabled Jest for the project and outputs a `junit.xml` file.
