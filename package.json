@@ -1,24 +1,27 @@
 {
   "name": "probable-memory",
-  "version": "0.2.0",
-  "description": "Prototype Launcher",
-  "author": "Egee",
-  "main": "main.js",
-  "license": "GPL-3.0",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:egee-irl/probable-memory.git",
+  "author": "egee-irl <brian@egee.io>",
+  "license": "MIT",
   "scripts": {
-    "start": "electron .",
-    "test": "jasmine"
+    "start": "./node_modules/.bin/electron .",
+    "build": "node_modules/.bin/tsc --build tsconfig.json",
+    "rebuild": "yarn clean && yarn run build",
+    "clean": "rm -rf dist/* && touch dist/.gitkeep",
+    "test": "node_modules/.bin/jest --runInBand --ci --reporters=default --reporters=jest-junit"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/egee-irl/probable-memory"
+  "dependencies": {
+    "electron": "^6.0.10"
   },
   "devDependencies": {
-    "eslint": "^3.0.0",
-    "eslint-config-standard": "^5.3.5",
-    "eslint-plugin-promise": "^2.0.0",
-    "eslint-plugin-standard": "^2.0.0",
-    "jasmine": "^2.5.2",
-    "jasmine-node": "^1.14.5"
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.4",
+    "jest": "^24.9.0",
+    "jest-junit": "^8.0.0",
+    "ts-jest": "^24.0.2",
+    "ts-lint": "^4.5.1",
+    "typescript": "^3.6.2"
   }
 }
