@@ -6,8 +6,8 @@
   "author": "egee-irl <brian@egee.io>",
   "license": "MIT",
   "scripts": {
-    "start": "./node_modules/.bin/electron .",
-    "build": "node_modules/.bin/tsc --build tsconfig.json",
+    "start": "./node_modules/.bin/electron ./dist/main.js",
+    "build": "node_modules/.bin/tsc --build tsconfig.json && cp ./app/index.html ./dist",
     "rebuild": "yarn clean && yarn run build",
     "clean": "rm -rf dist/* && touch dist/.gitkeep",
     "test": "node_modules/.bin/jest --runInBand --ci --reporters=default --reporters=jest-junit"
