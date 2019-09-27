@@ -3,15 +3,22 @@
 
 <head>
   <title>Probable Memory</title>
+  <link rel="stylesheet" href="../node_modules/xel/themes/macos.css">
+  <script src="../node_modules/xel/xel.min.js"></script>
 </head>
 
 <body>
   <div>
     Built with Electron
-    <script>document.write(process.versions.electron)</script>
-    <button id="raptor">Raptor</button>
-    <button id="oregontrail">Oregon Trail</button>
-    <button id="biomenace">Bio Menace</button>
+    <x-button id="raptor">
+      <x-label>Raptor</x-label>
+    </x-button>
+    <x-button id="oregontrail">
+      <x-label>Oregon Trail</x-label>
+    </x-button>
+    <x-button id="biomenace">
+      <x-label>Bio Menace</x-label>
+    </x-button>
   </div>
   <!-- <script type='text/javascript'src="index.js"></script> -->
 </body>
