@@ -8,8 +8,41 @@
 </head>
 
 <body>
+  <x-menubar>
+    <x-menuitem>
+      <x-label>File</x-label>
+      <x-menu>
+        <x-menuitem>
+          <x-label>New</x-label>
+          <x-shortcut value='Control+N'></x-shortcut>
+        </x-menuitem>
+        <x-menuitem>
+          <x-label>Open…</x-label>
+          <x-shortcut value='Control+O'></x-shortcut>
+        </x-menuitem>
+        <hr>
+        <x-menuitem>
+          <x-label>Save</x-label>
+          <x-shortcut value='Control+S'></x-shortcut>
+        </x-menuitem>
+        <x-menuitem>
+          <x-label>Save as…</x-label>
+          <x-shortcut value='Control+Shift+S'></x-shortcut>
+        </x-menuitem>
+        <hr>
+        <x-menuitem>
+          <x-label>Close</x-label>
+          <x-shortcut value='Control+W'></x-shortcut>
+        </x-menuitem>
+        <x-menuitem>
+          <x-label>Quit</x-label>
+          <x-shortcut value='Control+Q'></x-shortcut>
+        </x-menuitem>
+      </x-menu>
+    </x-menuitem>
+  </x-menubar>
 
-  <x-card style='width: 50%; float: left; margin: 0px;'>
+  <x-card style='width: 25%; float: left; margin: 0px;'>
     <main>
       <strong>Sample card</strong>
       <p>This is sample card content</p>
