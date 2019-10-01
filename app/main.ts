@@ -4,7 +4,13 @@ import * as path from "path";
 let mainWindow: Electron.BrowserWindow;
 
 function createWindow() {
-  mainWindow = new BrowserWindow({ width: 800, height: 600, });
+  const windowParams = {
+    width: 800,
+    height: 600,
+    minWidth: 540,
+    minHeight: 400
+  }
+  mainWindow = new BrowserWindow(windowParams);
   mainWindow.setMenuBarVisibility(false)
 
   mainWindow.loadFile(path.join(__dirname, "./index.html"));
