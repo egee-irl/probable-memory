@@ -12,7 +12,7 @@ and then:
 
 and finally:
 
-`npm run desktop`.
+`npm run desktop`
 
 For the first time running the desktop package, do:
 
