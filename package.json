@@ -1,0 +1,29 @@
+{
+  "name": "messy-drawer",
+  "version": "1.0.0",
+  "description": "🗄️ A vintage style app launcher",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/run",
+    "restart": "npm run rebuild && npm start",
+    "rebuild": "./node_modules/.bin/cake rebuild",
+    "build": "./node_modules/.bin/cake build",
+    "clean": "./node_modules/.bin/cake clean",
+    "test": "npm run rebuild && ./node_modules/mocha/bin/mocha --require coffeescript/register test/**/*.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egee-irl/messy-drawer.git"
+  },
+  "author": "brian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/egee-irl/messy-drawer/issues"
+  },
+  "homepage": "https://github.com/egee-irl/messy-drawer#readme",
+  "devDependencies": {
+    "coffeelint": "^2.1.0",
+    "coffeescript": "^2.5.1",
+    "mocha": "^7.1.0"
+  }
+}
