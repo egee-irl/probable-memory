@@ -2,14 +2,55 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
-    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <title>Messy Drawer</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="../node_modules/xel/themes/material.css">
+    <script src="../node_modules/xel/xel.min.js"></script>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <x-box>
+      <x-box>
+        yeet
+      </x-box>
+      <x-box>
+        <x-button id="game00">
+          <x-label>Dangerous Dave</x-label>
+        </x-button>
+        <x-button  id="game01" style="margin-left: 5px;">
+          <x-label>Button</x-label>
+        </x-button>
+      </x-box>
+    </x-box>
+
+    <script src="../dist/logic.js"></script>
   </body>
 </html>
+
+
+<!-- <section class="section">
+  <div class="container">
+    <h1 class="title">Curated Apps</h1>
+    <h2 class="subtitle">
+      Current apps that have been curated to appear in this list
+    </h2>
+    <div class="columns is-gapless">
+      <div class="column is-one-fifth">
+        <figure class="image is-48x48">
+          <img id="game00" src="./icons/icon00.png">
+          
+        </figure>
+        <span>Dangerous Dave: Haunted Mansion</span>
+      </div>
+      <div class="column is-one-fifth">
+        <figure class="image is-48x48">
+          <img src="./icons/icon01.png">
+        </figure>
+      </div>
+      <div class="column is-one-fifth">
+        <figure class="image is-48x48">
+          <img src="./icons/icon02.png">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section> -->
