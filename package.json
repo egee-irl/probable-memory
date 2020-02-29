@@ -4,7 +4,7 @@
   "description": "🗄️ A vintage style app launcher",
   "main": "index.js",
   "scripts": {
-    "start": "node ./bin/run",
+    "start": "cd ./dist && ../node_modules/.bin/electron .",
     "restart": "npm run rebuild && npm start",
     "rebuild": "./node_modules/.bin/cake rebuild",
     "build": "./node_modules/.bin/cake build",
@@ -24,6 +24,7 @@
   "devDependencies": {
     "coffeelint": "^2.1.0",
     "coffeescript": "^2.5.1",
+    "electron": "^8.0.2",
     "mocha": "^7.1.0"
   }
 }
