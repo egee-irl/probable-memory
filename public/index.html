@@ -5,18 +5,31 @@
     <title>Messy Drawer</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     <link rel="stylesheet" href="../node_modules/xel/themes/material.css">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="../node_modules/xel/xel.min.js"></script>
   </head>
   <body>
-    <x-box>
-      <x-box>
-        yeet
-      </x-box>
-      <x-box>
-        <x-button id="game00">
+    <x-box class="messy-box">
+      <x-menu class="messy-menu" opened>
+        <x-menuitem>
+          <x-icon name="computer"></x-icon>
+          <x-label>Console</x-label>
+        </x-menuitem>
+        <x-menuitem>
+          <x-icon name="gamepad"></x-icon>
+          <x-label>DOS</x-label>
+        </x-menuitem>      
+        <hr>      
+        <x-menuitem>
+          <x-icon></x-icon>
+          <x-label>Refresh</x-label>
+        </x-menuitem>
+      </x-menu>
+      <x-box class="messy-box messy-grid">
+        <x-button id="game00" class="messy-button">
           <x-label>Dangerous Dave</x-label>
         </x-button>
-        <x-button  id="game01" style="margin-left: 5px;">
+        <x-button  id="game01" class="messy-button">
           <x-label>Button</x-label>
         </x-button>
       </x-box>
@@ -25,32 +38,3 @@
     <script src="../dist/logic.js"></script>
   </body>
 </html>
-
-
-<!-- <section class="section">
-  <div class="container">
-    <h1 class="title">Curated Apps</h1>
-    <h2 class="subtitle">
-      Current apps that have been curated to appear in this list
-    </h2>
-    <div class="columns is-gapless">
-      <div class="column is-one-fifth">
-        <figure class="image is-48x48">
-          <img id="game00" src="./icons/icon00.png">
-          
-        </figure>
-        <span>Dangerous Dave: Haunted Mansion</span>
-      </div>
-      <div class="column is-one-fifth">
-        <figure class="image is-48x48">
-          <img src="./icons/icon01.png">
-        </figure>
-      </div>
-      <div class="column is-one-fifth">
-        <figure class="image is-48x48">
-          <img src="./icons/icon02.png">
-        </figure>
-      </div>
-    </div>
-  </div>
-</section> -->
