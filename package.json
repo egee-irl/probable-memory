@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "cd ./dist && ../node_modules/.bin/electron .",
-    "restart": "npm run rebuild && npm start",
-    "rebuild": "./node_modules/.bin/cake rebuild",
+    "restart": "npm run build && npm start",
     "build": "./node_modules/.bin/cake build",
     "clean": "./node_modules/.bin/cake clean",
-    "test": "npm run rebuild && ./node_modules/mocha/bin/mocha --require coffeescript/register test/**/*.coffee"
+    "test": "npm run build && ./node_modules/mocha/bin/mocha --require coffeescript/register test/**/*.coffee"
   },
   "repository": {
     "type": "git",
