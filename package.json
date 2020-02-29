@@ -25,5 +25,8 @@
     "coffeescript": "^2.5.1",
     "electron": "^8.0.2",
     "mocha": "^7.1.0"
+  },
+  "dependencies": {
+    "xel": "0.0.215"
   }
 }
